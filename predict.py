@@ -3,6 +3,13 @@ import pickle
 import pandas as pd
 
 
+# سازگاری با Streamlit قدیمی (برای جلوگیری از AttributeError)
+if not hasattr(st, "divider"):
+    def _divider():
+        st.markdown("---")
+    st.divider = _divider
+
+
 @st.cache_resource
 def load_model():
     return pickle.load(open("model.pkl", "rb"))
