@@ -82,7 +82,7 @@ def predict_page():
     with pcol3:
         st.caption("سناریوها فقط برای تست و دمو هستند (اعداد نمونه‌اند).")
 
-    st.divider()
+    st.markdown("---")
 
     # Defaults in session_state (so presets can fill them)
     defaults = {
@@ -153,7 +153,7 @@ def predict_page():
 
         pred = int(model.predict(input_df)[0])
 
-        st.divider()
+        st.markdown("---")
 
         # Show result
         if pred == 1:
